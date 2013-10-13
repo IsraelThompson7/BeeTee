@@ -3,7 +3,7 @@
 Demo application for bluetooth device scanning using the iOS private framework "BluetoothManager"
 
 
-## Summarize
+## Abstract
 
 Because it is not trivial to use a private iOS framework, I implemented a demo application for the `BluetoothManager.framework` in iOS 7.
 
@@ -13,23 +13,24 @@ It makes sense that this framework does not work in the simulator.
 
 
 
-##Settings
+##Requirements
 
 * iOS 7 and greater
 * iOS 7 compatible device (does not working on the simulator)
 * Xcode 5 and greater
-* Right placed header files (see Preparations)
+* Correctly placed header files (see Preparations)
 
+Except the GUI the iOS works also fine for iOS 5 and 6. But take care about the path (see next paragraph).
 
 ##Preparations
-
 
 * Find the folder, e.g. by terminal
 <pre><code>open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/PrivateFrameworks/BluetoothManager.framework</code></pre>
 * Extract the Headers.zip archive and add the extracted folder `Headers` which includes `BluetoothManager.h` and `BluetoothDevice.h` in the directory above.
 * Restart Xcode
 
-Remarks: The folder can differ: Please take care about your iOS version. 
+The folder can differ: Please take care about your iOS version!
+
 
 
 ##The BluetoothManager.framework
@@ -56,14 +57,11 @@ Can be used e.g.
 <pre><code>[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothAvailabilityChanged:) name:@"BluetoothAvailabilityChangedNotification" object:nil];</code></pre>
 and 
 <pre><code>- (void)bluetoothAvailabilityChanged:(NSNotification *)notification { ... }</code></pre>
- 
- 
- 
- 
- 
- 
- 
+
 
 
 ##Licence
 GPL (v3)
+
+
+
