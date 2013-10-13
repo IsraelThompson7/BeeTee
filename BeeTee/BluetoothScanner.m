@@ -41,11 +41,13 @@
 
 - (void)addNotification
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothPowerChanged:) name:@"BluetoothPowerChangedNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothAvailabilityChanged:) name:@"BluetoothAvailabilityChangedNotification" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDeviceDiscovered:) name:@"BluetoothDeviceDiscoveredNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDeviceRemoved:) name:@"BluetoothDeviceRemovedNotification" object:nil];
-    
+
+
     // all available notifications belonging to BluetoothManager I could figure out - not used and therefore implemented in this demo app
     /*
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothPowerChanged:) name:@"BluetoothPowerChangedNotification" object:nil];
@@ -54,8 +56,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDiscoveryStateChanged:) name:@"BluetoothDiscoveryStateChangedNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDeviceDiscovered:) name:@"BluetoothDeviceDiscoveredNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothAvailabilityChanged:) name:@"BluetoothAvailabilityChangedNotification" object:nil];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDeviceConnectSuccess:) name:@"BluetoothDeviceConnectSuccessNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothConnectionStatusChanged:) name:@"BluetoothConnectionStatusChangedNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bluetoothDeviceDisconnectSuccess:) name:@"BluetoothDeviceDisconnectSuccessNotification" object:nil];
@@ -85,16 +86,24 @@ void notificationCallback(CFNotificationCenterRef center, void *observer, CFStri
 
 - (void)bluetoothAvailabilityChanged:(NSNotification *)notification
 {
-    bool isEnabled = [self.bluetoothManager enabled];
-    NSLog(@"Bluetooth is %@", isEnabled ? @"enabled" : @"disabled");
-    if (isEnabled) {
+    if (![self.bluetoothManager enabled]) {
+        [self.bluetoothManager setEnabled:YES]; // automatically turn bluetooth on
+    }
+    else {
         [self.bluetoothManager setDeviceScanningEnabled:YES];
         [self.bluetoothManager scanForServices:0xFFFFFFFF];
     }
-    else {
-        NSLog(@"Bluetooth error: not available, scanning not possible");
+}
+
+
+- (void)bluetoothPowerChanged:(NSNotification *)notification
+{
+    if ([self.bluetoothManager enabled]) {
+        [self.bluetoothManager setDeviceScanningEnabled:YES];
+        [self.bluetoothManager scanForServices:0xFFFFFFFF];
     }
 }
+
 
 
 - (void)bluetoothDeviceDiscovered:(NSNotification *)notification

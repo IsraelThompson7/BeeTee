@@ -25,7 +25,6 @@
 		5F6E524A180AB350000FB14D /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E5248180AB350000FB14D /* DeviceDetailViewController.m */; };
 		5F6E524E180AB367000FB14D /* BluetoothScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E524D180AB367000FB14D /* BluetoothScanner.m */; };
 		5F6E5251180AB390000FB14D /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6E5250180AB390000FB14D /* BluetoothManager.framework */; };
-		5F6E5253180AB445000FB14D /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 5F6E5252180AB445000FB14D /* ReadMe */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		5F6E524C180AB367000FB14D /* BluetoothScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothScanner.h; sourceTree = "<group>"; };
 		5F6E524D180AB367000FB14D /* BluetoothScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothScanner.m; sourceTree = "<group>"; };
 		5F6E5250180AB390000FB14D /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothManager.framework; path = System/Library/PrivateFrameworks/BluetoothManager.framework; sourceTree = SDKROOT; };
-		5F6E5252180AB445000FB14D /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 		5F6E51FC180AB313000FB14D = {
 			isa = PBXGroup;
 			children = (
-				5F6E5252180AB445000FB14D /* ReadMe */,
 				5F6E520E180AB313000FB14D /* BeeTee */,
 				5F6E5230180AB313000FB14D /* BeeTeeTests */,
 				5F6E5207180AB313000FB14D /* Frameworks */,
@@ -272,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F6E5253180AB445000FB14D /* ReadMe in Resources */,
 				5F6E5224180AB313000FB14D /* Images.xcassets in Resources */,
 				5F6E5243180AB33C000FB14D /* Main_iPad.storyboard in Resources */,
 				5F6E5213180AB313000FB14D /* InfoPlist.strings in Resources */,

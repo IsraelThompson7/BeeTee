@@ -37,17 +37,16 @@ The folder can differ: Please take care about your iOS version!
 
 ####Available Notificaitons
     BluetoothAvailabilityChangedNotification
+    BluetoothDiscoveryStateChangedNotification
+    
     BluetoothDeviceDiscoveredNotification
     BluetoothDeviceRemovedNotification
     
+    // more methods they are not used in this app
     BluetoothPowerChangedNotification
     BluetoothConnectabilityChangedNotification
     BluetoothDeviceUpdatedNotification
-    
-    BluetoothDiscoveryStateChangedNotification
-    BluetoothDeviceDiscoveredNotification
-    BluetoothAvailabilityChangedNotification
-    
+
     BluetoothDeviceConnectSuccessNotification
     BluetoothConnectionStatusChangedNotification
     BluetoothDeviceDisconnectSuccessNotification
