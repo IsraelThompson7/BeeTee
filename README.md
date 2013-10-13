@@ -26,7 +26,7 @@ Except the GUI the iOS works also fine for iOS 5 and 6. But take care about the 
 
 * Find the folder, e.g. by terminal
 <pre><code>open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/PrivateFrameworks/BluetoothManager.framework</code></pre>
-* Extract the [Headers.zip](/blob/master/Headers.zip) archive and add the extracted folder `Headers` which includes `BluetoothManager.h` and `BluetoothDevice.h` in the directory above.
+* Extract the [Headers.zip](/Headers.zip) archive and add the extracted folder `Headers` which includes `BluetoothManager.h` and `BluetoothDevice.h` in the directory above.
 * Restart Xcode
 
 The folder can differ: Please take care about your iOS version!
