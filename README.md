@@ -5,7 +5,7 @@ Demo application for bluetooth device scanning using the iOS private framework "
 
 ## Abstract
 
-Because it is not trivial to use a private iOS framework, I implemented a demo application for the `BluetoothManager.framework` in iOS 7.
+Because it is not trivial to use a private iOS framework, I implemented a demo application for the `BluetoothManager.framework` in iOS 7. I have not used the ARC.
 
 Based on the [AppStore guideline §2.5](https://developer.apple.com/appstore/resources/approval/guidelines.html) not to use private (undocumented) functions it is not possible to publish apps with the `BluetoothManager.framework` in the AppStore. Your may need a valid membership of the [iOS Developer Program](https://developer.apple.com/programs/ios/).
 
@@ -38,7 +38,7 @@ The folder can differ: Please take care about your iOS version!
 ####Available Notificaitons
     BluetoothAvailabilityChangedNotification
     BluetoothDiscoveryStateChangedNotification
-    
+
     BluetoothDeviceDiscoveredNotification
     BluetoothDeviceRemovedNotification
     
