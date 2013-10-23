@@ -18,7 +18,7 @@ Based on the [AppStore guideline §2.5](https://developer.apple.com/appstore/res
 * Xcode 5 and greater
 * Correctly placed header files (see Preparations)
 
-Except the GUI the iOS works also fine for iOS 5 and 6. But take care about the path (see next paragraph).
+Except the GUI the app and the framework as well works also fine for iOS 5 and 6. But take care about the path (see next paragraph).
 
 ##Preparations
 
